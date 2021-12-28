@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "MetaKey",
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon-34.png"
+  },
+  "content_security_policy": {
+    "sandbox": "sandbox allow-scripts; script-src 'self'; child-src 'self'",
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "permissions": ["storage", "activeTab", "tabs", "alarms"],
+  "content_scripts": [
+    {
+      "matches": ["file://*/*", "http://*/*", "https://*/*"],
+      "run_at": "document_start",
+      "js": ["contentScript.bundle.js"]
+    }
+  ]
+}

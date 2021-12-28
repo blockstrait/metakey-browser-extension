@@ -1,0 +1,17 @@
+@import "custom";
+
+@import "~bootstrap/scss/bootstrap";
+
+@import '~loaders.css/src/animations/ball-pulse';
+
+.icon-with-fallback {
+  &__identicon {
+    width: 64px;
+    height: 64px;
+
+    &--default {
+      position: relative;
+      color: black;
+    }
+  }
+}
